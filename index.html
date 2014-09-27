@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HotelApp</title>
+<meta name="viewport" content="width-device-width, initial-scale=1" />
+<!-- librerias css -->
+<link href="css/jquery.mobile-1.4.4.min.css" rel="stylesheet">
+<link href="css/jquery.mobile.theme-1.4.4.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+
+	<div data-role="header">
+		<h1>HotelApp</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul data-role="listview" data-inset="true">
+   		 <li><a href="#nr1">Crear Reserva</a></li>
+   		 <li><a href="#historial">Ver Historial</a></li>
+   		 <li><a href="#priv">Privacidad</a></li>
+		</ul>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<span style="font-size:10pt;">Todos los derechos reservados &copy;</span>
+        <a href="#nosotros" data-transition="slideup">Info</a>
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+
+
+
+
+
+<div data-role="page" id="nosotros">
+
+	<div data-role="header">
+		<h1>Nosotros</h1>
+        <a href="#" data-rel="back">Atras</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p style="text-align:justify">¡Consiga su cuenta de WebEx y empiece ya mismo a organizar sus propias reuniones!
+Ventajas:
+Antes y después de su reunión, comparta su agenda, notas, archivos y comentarios de la reunión.
+Cargue, cree y comparta archivos que sean accesibles desde cualquier lugar, y haga comentarios sobre las actividades.
+Vea la disponibilidad de los contactos, envíe mensajes instantáneos e inicie reuniones instantáneamente a partir de sesiones de chat.</p>
+	</div><!-- /content -->
+
+    
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+<div data-role="page" id="nr1">
+
+	<div data-role="header">
+		<h1>Nueva Reserva</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul data-role="listview" data-inset="true">
+        <li data-theme="b">Seleccione tipo de habitación</li>
+   		 <li><a href="#nr2">Sencilla</a></li>
+   		 <li><a href="#nr2">Doble</a></li>
+   		 <li><a href="#nr2">Triple</a></li>
+		</ul>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="navbar" data-theme="b">
+    		<ul>
+        		<li><a href="#" data-rel="back" style="background-color:#aa0000;">Cancelar</a></li>
+        		<li><a href="#">Siguiente</a></li>
+    		</ul>
+</div><!-- /navbar -->
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+<div data-role="page" id="nr2">
+
+	<div data-role="header">
+		<h1>Nueva Reserva</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul data-role="listview" data-inset="true">
+        <li data-theme="b">Datos de reserva</li>
+   		 <li>Habitaciones:
+         	<select id="nrHab">
+            	<option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            </li>
+   		 <li>Personas:
+          	<select id="nrPer">
+            	<option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            </li>
+   		 <li>Días:
+          	<select id="nrDia">
+            	<option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+         </li>
+		</ul>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="navbar" data-theme="b">
+    		<ul>
+        		<li><a href="#" data-rel="back" style="background-color:#aa0000;">Atrás</a></li>
+        		<li><a href="#">Reservar</a></li>
+    		</ul>
+</div><!-- /navbar -->
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div data-role="page" id="historial">
+
+	<div data-role="header">
+		<h1>Historial</h1>
+        <a href="#" data-rel="back">Atrás</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<table>
+        	<thead>
+        		<th>Fecha</th>
+                <th>Tipo de Habitación</th>
+       		</thead>
+            <tbody>
+            
+            </tbody>
+        </table>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="navbar" data-theme="b">
+    		<ul>
+        		<li><a href="#nosotros" data-icon="alert">Info</a></li>
+        		<li><a href="#priv" data-icon="tag">Privacidad</a></li>
+                <li><a href="#nr1" data-icon="plus">Reservar</a></li>
+    		</ul>
+</div><!-- /navbar -->
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
+
+
+
+
+
+
+<div data-role="page" id="priv">
+
+	<div data-role="header">
+		<h1>Privacidad</h1>
+        <a href="#" data-rel="back">Atras</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p style="text-align:justify">¡Consiga su cuenta de WebEx y empiece ya mismo a organizar sus propias reuniones!
+Ventajas:
+Antes y después de su reunión, comparta su agenda, notas, archivos y comentarios de la reunión.
+Cargue, cree y comparta archivos que sean accesibles desde cualquier lugar, y haga comentarios sobre las actividades.
+Vea la disponibilidad de los contactos, envíe mensajes instantáneos e inicie reuniones instantáneamente a partir de sesiones de chat.</p>
+	</div><!-- /content -->
+
+    
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+<div data-role="page" id="reg">
+
+	<div data-role="header">
+		<h1>Registro</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul data-role="listview">
+        	<li data-theme="b">Datos de usuario</li>
+            <li><input type="text" placeholder="Nombre" id="regName"></li>
+            <li><input type="email" placeholder="Correo Electrónico" id="regMail"></li>
+            <li><input type="tel" placeholder="Teléfono" id="regTel"></li>
+            <li><a href="#" id="regTake">Tomar Foto</a></li>
+            <li id="foto"></li>
+            <li><a href="#" id="regSend" data-role="button" style="text-align:center;" data-theme="b">Registrar</a></li>
+        </ul>
+	</div><!-- /content -->
+
+    
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+<!-- librerias js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</body>
+</html>
