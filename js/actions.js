@@ -4,6 +4,7 @@ var fn = {
 		document.addEventListener('deviceready',fn.device,false);
 	},
 	device: function(){
+		window.location.href = '#reg';
 		var x = false;
 		if(!x){
 			window.location.href = '#reg';
@@ -17,7 +18,7 @@ var fn = {
 		if(nombre != '' && mail != '' && tel != ''){
 			//Enviar datos al servidor
 		}else{
-			alert("Todos lo scampos son requeridos");
+			alert("Todos los campos son requeridos");
 		}
 	}
 };
