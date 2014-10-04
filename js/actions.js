@@ -1,7 +1,23 @@
 // action.js
 var fn = {
 	init: function(){
-		alert();
+		document.addEventListener('deviceready',fn.device,false);
+	},
+	device: function(){
+		var x = false;
+		if(!x)
+			window.location.href = '#reg';
+		$('#regSend').click(fn.registro);
+	},
+	registro: function(){
+		var nombre = $('#regName').val();
+		var mail = $('#regMail').val();
+		var tel = $('#regTel').val();
+		if(nombre != '' && mail != '' && tel != ''){
+			//Enviar datos al servidor
+		}else{
+			alert("Todos lo scampos son requeridos");
+		}
 	}
 };
-window.addEventListener('load',fn.init,false);
+$(fn.init);
