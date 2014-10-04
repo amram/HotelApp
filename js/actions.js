@@ -5,11 +5,8 @@ var fn = {
 	},
 	device: function(){
 		var x = false;
-		if(!x){
-			//window.location.href = '#reg';
-			window.location.replace("#reg");
-
-		}
+		if(!x)
+			window.location.href = '#reg';
 		$('#regSend').click(fn.registro);
 	},
 	registro: function(){
