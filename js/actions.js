@@ -15,8 +15,9 @@ var fn = {
 		var tel = $('#regTel').val();
 		if(nombre != '' && mail != '' && tel != ''){
 			//Enviar datos al servidor
+			navigator.notification.beep(2);
 		}else{
-			alert("Todos los campos son requeridos");
+			navigator.notification.alert("Todos los campos son requeridos.",null,'Error','Aceptar');
 		}
 	}
 };
