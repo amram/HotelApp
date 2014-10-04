@@ -8,7 +8,7 @@ var fn = {
 		if(!x)
 			window.location.href = '#reg';
 		$('#regTake').tap(myCapture.tomarFoto);	
-		$('#regSend').click(fn.registro);
+		$('#regSend').tap(fn.registro);
 	},
 	registro: function(){
 		var nombre = $('#regName').val();
