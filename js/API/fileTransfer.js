@@ -2,6 +2,7 @@
 var myTransfer = {
     subido: function(r){
         if(r.response == '1'){
+			$.mobile.loading('hide');
             navigator.notification.alert("Se ha registrado correctamente",function(){
                 window.location.href = '#home';
                 //Asignar Registro Local
