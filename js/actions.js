@@ -6,13 +6,13 @@ var fn = {
         //$('#regSend').click(); //Producir un click
     },
     device: function(){
-       if(!fn.estaRegistrado)
+        if(!fn.estaRegistrado)
             window.location.href = '#reg';
         $('#regTake').tap(myCapture.tomarFoto);
         $('#regSend').tap(fn.registro);
-		$('#showStorage').tap(function(){
-			alert(fn.storage.getItem('registro'));
-		});
+        $('#showStorage').tap(function(){
+            alert(fn.storage.getItem('registro'));
+        });
     },
     registro: function(){
         var nombre = $('#regName').val();
@@ -27,7 +27,7 @@ var fn = {
         } 
     },
     enviarRegistro: function(nom, mail, tel, foto){
-		$.mobile.loading('show');
+        $.mobile.loading( 'show' );
         $.ajax({
             type: "POST",
             url: "http://carlos.igitsoft.com/apps/test.php",
@@ -38,12 +38,12 @@ var fn = {
             }
         });
     },
-	storage: window.localStorage,
-	estaRegistrado: function(){
-		if(fn.storage.getItem('registro') == 1)
-		return true;
-	else
-		return false;	
-	}
+    storage: window.localStorage,
+    estaRegistrado: function(){
+        if(fn.storage.getItem('registro') == 1)
+            return true;
+        else
+            return false;
+    }
 };
 $(fn.init);

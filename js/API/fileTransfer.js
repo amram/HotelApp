@@ -2,7 +2,7 @@
 var myTransfer = {
     subido: function(r){
         if(r.response == '1'){
-			$.mobile.loading('hide');
+            $.mobile.loading( 'hide' );
             navigator.notification.alert("Se ha registrado correctamente",function(){
                 window.location.href = '#home';
                 fn.storage.setItem('registro',1);//Guarda localmente un dato
