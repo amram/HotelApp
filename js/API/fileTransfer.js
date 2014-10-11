@@ -10,12 +10,15 @@ var myTransfer = {
 	},
 	error: function(err){
 		navigator.notification.alert("Error: "+err.code,null,"Error","Aceptar");
-	},
-	opciones: new FileUploadOptions(),
-	ft: new FileTransfer()
-};
+},
 
-myTransfer.opciones.fileKey="foto";
-myTransfer.opciones="Amram";
-myTransfer.opciones.mimeType="image/jpg";
-myTransfer.opciones.params = {value1: 'Text', value2: 'param'};
+subir: function(uri,url){
+	myTransfer.opciones.fileKey="foto";
+	myTransfer.opciones="Amram";
+	myTransfer.opciones.mimeType="image/jpeg";
+	myTransfer.opciones.params = {value1: 'Text', value2: 'param'};
+
+	myTransfer.ft = new FileTransfer();
+	myTransfer.ft.upload(uri,url,myTransfer.subido,myTransfer.error,myTransfer.opciones);
+	}
+};
