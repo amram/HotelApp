@@ -5,7 +5,7 @@ var myTransfer = {
 			$.mobile.loading('hide');
             navigator.notification.alert("Se ha registrado correctamente",function(){
                 window.location.href = '#home';
-                //Asignar Registro Local
+                fn.storage.setItem('registro',1);//Guarda localmente un dato
             },"Felicidades","Aceptar");
         }
     },

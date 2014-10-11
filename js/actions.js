@@ -6,8 +6,7 @@ var fn = {
         //$('#regSend').click(); //Producir un click
     },
     device: function(){
-        var x = false;
-        if(!x)
+       if(!fn.estaRegistrado)
             window.location.href = '#reg';
         $('#regTake').tap(myCapture.tomarFoto);
         $('#regSend').tap(fn.registro);
@@ -35,6 +34,13 @@ var fn = {
                 myTransfer.subir(foto, "http://carlos.igitsoft.com/apps/test.php");
             }
         });
-    }
+    },
+	storage: window.localStorage,
+	estaRegistrado: function(){
+		if(fn.storage.getItem('registro') == 1)
+		return true;
+	else
+		return false;	
+	}
 };
 $(fn.init);
