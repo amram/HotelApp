@@ -80,7 +80,7 @@ var fn = {
 			if(connection.estaConectado()){
                 //Enviar Reserva a servidor
                 
-				enviarRegistro: function(tipo, numero, personas, dias){
+				enviarRegistro2: function(th, ha, pr, di){
         $.ajax({
             type: "POST",
             url: "http://carlos.igitsoft.com/apps/test.php",
