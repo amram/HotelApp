@@ -12,7 +12,7 @@ var db = {
 		db.crearDB.transaction(db.tablaPendientes,db.error,db.exitoPendientes);
 	},
 	tablaPendientes: function(tx){
-		tx.executeSQL("CREATE TABLE IF NOT EXISTS pendientes (id unique, th, ha, pr, di)");
+		tx.executeSql("CREATE TABLE IF NOT EXISTS pendientes (id unique, th, ha, pr, di)");
 		 tx.executeSql("INSERT INTO pendientes(th, ha, pr, di) VALUES ('"+db.th+"', '"+db.ha+"', '"+db.pr+"', '"+db.di+"')");
 	},
 	exitoPendientes: function(){
