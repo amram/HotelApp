@@ -70,10 +70,31 @@ var fn = {
         var di = $('#nrDia').val();
         
         if(th != '' && ha != '' && pr != '' && di != ''){
-            if(connection.estaConectado()){
+            
+			
+			
+			
+			
+			
+			
+			if(connection.estaConectado()){
                 //Enviar Reserva a servidor
                 
+				enviarRegistro: function(tipo, numero, personas, dias){
+        $.ajax({
+            type: "POST",
+            url: "http://carlos.igitsoft.com/apps/test.php",
+            data: {tipo:th,numero:ha,personas:pr,dias:di}
+        });
+				}
+				
 				 db.agregarHistorial(th,ha,pr,di);
+				 
+				 
+				 
+				 
+				 
+				 
             }else{
                 //Guardar los datos hasta conexión
                 db.agregarPendientes(th,ha,pr,di);
