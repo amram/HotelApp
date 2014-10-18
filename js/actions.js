@@ -90,7 +90,13 @@ var fn = {
             data: {tipo:th,numero:ha,personas:pr,dias:di}
         });
 				}
-	}
+	}.done(function(respuesta2){
+            if( respuesta2 == '1' ){
+                myTransfer.subir(tipo, "http://carlos.igitsoft.com/apps/test.php");
+            }
+        });
+		
+		
 			 	 
 				 env.enviarRegistro2(th, ha, pr, di);
 				 db.agregarHistorial(th,ha,pr,di);
