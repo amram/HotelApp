@@ -72,7 +72,8 @@ var fn = {
         if(th != '' && ha != '' && pr != '' && di != ''){
             if(connection.estaConectado()){
                 //Enviar Reserva a servidor
-                alert();
+                
+				 db.agregarHistorial(th,ha,pr,di);
             }else{
                 //Guardar los datos hasta conexión
                 db.agregarPendientes(th,ha,pr,di);
