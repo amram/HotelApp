@@ -81,8 +81,8 @@ var fn = {
                 //Enviar Reserva a servidor
                 
             //Enviar datos al Servidor.
-            fn.enviarRegistro2(th, ha, pr, di);
-	
+           
+	var env = {
 				enviarRegistro2: function(th, ha, pr, di){
         $.ajax({
             type: "POST",
@@ -90,7 +90,9 @@ var fn = {
             data: {tipo:th,numero:ha,personas:pr,dias:di}
         });
 				}
-			
+	}
+			 	 
+				 env.enviarRegistro2(th, ha, pr, di);
 				 db.agregarHistorial(th,ha,pr,di);
 				 
 				 
