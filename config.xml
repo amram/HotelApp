@@ -20,7 +20,7 @@
             Carlos Celma
         </author>
         
-		<icon src="http://3.bp.blogspot.com/-0U02LQeKY1k/TYZZoLI6u0I/AAAAAAAABGE/Z8Yt5fao7JQ/s400/hotel.png" \>
+	
 		
         <gap:plugin name="org.apache.cordova.dialogs" />
         <gap:plugin name="org.apache.cordova.media-capture" />
