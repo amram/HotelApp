@@ -20,7 +20,7 @@
 	<div role="main" class="ui-content">
 		<ul data-role="listview" data-inset="true">
    		 <li><a href="#nr1">Crear Reserva</a></li>
-   		 <li><a href="#historial">Ver Historial</a></li>
+   		 <li><a href="#historial" id="verHist">Ver Historial</a></li>
    		 <li><a href="#priv">Privacidad</a></li>
          <li><a href="#reg">Registro</a></li>
 		</ul>
@@ -168,11 +168,48 @@ Vea la disponibilidad de los contactos, envíe mensajes instantáneos e inicie r
 	<div role="main" class="ui-content">
 		<table>
         	<thead>
+            <tr>
         		<th>Fecha</th>
                 <th>Tipo de Habitación</th>
+                <th>Habitaciones</th>
+                <th>Personas</th>
+                <th>Días</th>
+            </tr>
        		</thead>
             <tbody>
-            
+            	
+                <script type="text/javascript">
+				  leerHistorial: function(){
+        
+        db.crearDB().transaction(db.selectHistorial,db.error,null);
+    };
+    selectHistorial: function(tx){
+ 
+        tx.executeSql("SELECT * FROM historial",[],db.resultadosHistorial,db.error);
+    };
+	  error: function(err){
+        $.mobile.loading( 'hide' );
+        alert('Error: '+err.code);
+    };
+    resultadosHistorial: function(tx,res){
+      
+        var cant = res.rows.length;
+        if(cant>0){
+            for(var i = 0;i < cant;i++){
+           
+                var th = res.rows.item(i).th;
+                var ha = res.rows.item(i).ha;
+                var pr = res.rows.item(i).pr;
+                var di = res.rows.item(i).di;
+                <?php
+				echo "<tr><td>"+th+"</td><td>"+ha+"</td><td>"+pr+"</td><td>"+di+"</td></tr>";
+				?>
+            }
+        }
+	}
+                </script>
+                
+                
             </tbody>
         </table>
 	</div><!-- /content -->
