@@ -75,6 +75,7 @@ var db = {
 		
         var cant = res.rows.length;
         if(cant>0){
+			var x="";
             for(var i = 0;i < cant;i++){
            
                 var th = res.rows.item(i).th;
@@ -82,10 +83,11 @@ var db = {
                 var pr = res.rows.item(i).pr;
                 var di = res.rows.item(i).di;
                 
-				
-				$('#tbody').html("<tr><td>"+th+"</td><td>"+ha+"</td><td>"+pr+"</td><td>"+di+"</td></tr>");
+				x+="<tr><td>"+th+"</td><td>"+ha+"</td><td>"+pr+"</td><td>"+di+"</td></tr>";
 				
 			}
+			$('#tbody').html(x);
+				
 		}
 	}
 }
