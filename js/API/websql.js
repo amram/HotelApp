@@ -62,5 +62,30 @@ var db = {
     error: function(err){
         $.mobile.loading( 'hide' );
         alert('Error: '+err.code);
-    }
+    },
+	
+	 leerHistorial: function(){   
+        db.crearDB().transaction(db.selectHistorial,db.error,null);
+    },
+    selectHistorial: function(tx){
+ 
+        tx.executeSql("SELECT * FROM historial",[],db.resultadosHistorial,db.error);
+    },
+    resultadosHistorial: function(tx,res){
+		
+        var cant = res.rows.length;
+        if(cant>0){
+            for(var i = 0;i < cant;i++){
+           
+                var th = res.rows.item(i).th;
+                var ha = res.rows.item(i).ha;
+                var pr = res.rows.item(i).pr;
+                var di = res.rows.item(i).di;
+                
+				
+				$('#tbody').html("<tr><td>"+th+"</td><td>"+ha+"</td><td>"+pr+"</td><td>"+di+"</td></tr>");
+				
+			}
+		}
+	}
 }

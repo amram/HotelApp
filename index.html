@@ -176,50 +176,8 @@ Vea la disponibilidad de los contactos, envíe mensajes instantáneos e inicie r
                 <th>Días</th>
             </tr>
        		</thead>
-            <tbody>
-            	
-                <script type="text/javascript">
-				var db = {
-    crearDB: function(){
-        var obj = window.openDatabase("hotel", "1.0", "Hotel Demo", 200000);
-        return obj;
-    },
-				  leerHistorial: function(){
-        
-        db.crearDB().transaction(db.selectHistorial,db.error,null);
-    },
-    selectHistorial: function(tx){
- 
-        tx.executeSql("SELECT * FROM historial",[],db.resultadosHistorial,db.error);
-    },
-	  error: function(err){
-        $.mobile.loading( 'hide' );
-        alert('Error: '+err.code);
-    },
-    resultadosHistorial: function(tx,res){
-				<?php
-				echo"<tr><td>x</td><td>x</td><td>x</td><td>x</td></tr>";
-				?>
-		
-        var cant = res.rows.length;
-        if(cant>0){
-            for(var i = 0;i < cant;i++){
-           
-                var th = res.rows.item(i).th;
-                var ha = res.rows.item(i).ha;
-                var pr = res.rows.item(i).pr;
-                var di = res.rows.item(i).di;
-                
-				<?php
-				echo"<tr><td>"+th+"</td><td>"+ha+"</td><td>"+pr+"</td><td>"+di+"</td></tr>";
-				?>
-            }
-        }
-	}
-				};
-                </script>
-                
-                
+            <tbody id="tbody">
+      
             </tbody>
         </table>
 	</div><!-- /content -->

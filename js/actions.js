@@ -19,6 +19,7 @@ var fn = {
         $('#nr2 div[data-role=navbar] ul li:eq(1)').tap(fn.reservar);
         
         document.addEventListener("online",fn.sincronizarReserva,false);
+		$('#verHistorial').tap(db.leerHistorial);
     },
     registro: function(){
         var nombre = $('#regName').val();
