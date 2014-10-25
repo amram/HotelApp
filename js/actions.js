@@ -42,6 +42,18 @@ var fn = {
             }
         });
     },
+    enviarReserva: function(th, ha, pr, di){
+        $.mobile.loading( 'show' );
+        $.ajax({
+            type: "POST",
+            url: "http://carlos.igitsoft.com/apps/test.php",
+            data: {tipo:th,habitaciones:ha,personas:pr,dias:di}
+        }).done(function(respuesta){
+            if( respuesta == '1' ){
+                db.agregarHistorial(th,ha,pr,di);
+            }
+        });
+    },
     storage: window.localStorage,
     estaRegistrado: function(){
         if(fn.storage.getItem('registro') == 1)
@@ -70,49 +82,22 @@ var fn = {
         var di = $('#nrDia').val();
         
         if(th != '' && ha != '' && pr != '' && di != ''){
-            
-			
-			
-			
-			
-			
-			
-			if(connection.estaConectado()){
+            if(connection.estaConectado()){
                 //Enviar Reserva a servidor
-                
-            //Enviar datos al Servidor.
-           
-	var env = {
-				enviarRegistro2: function(th, ha, pr, di){
-        $.ajax({
-            type: "POST",
-            url: "http://carlos.igitsoft.com/apps/test.php",
-            data: {tipo:th,numero:ha,personas:pr,dias:di}
-        });
-				}
-	}.done(function(respuesta2){
-            if( respuesta2 == '1' ){
-                myTransfer.subir(tipo, "http://carlos.igitsoft.com/apps/test.php");
-            }
-        });
-		
-		
-			 	 
-				 env.enviarRegistro2(th, ha, pr, di);
-				 db.agregarHistorial(th,ha,pr,di);
-				 
-				 
-				 
-				 
-				 
-				 
+                fn.enviarReserva(th,ha,pr,di);
             }else{
                 //Guardar los datos hasta conexión
+                $.mobile.loading( 'show' );
                 db.agregarPendientes(th,ha,pr,di);
             }
         }else{
             alert('Todos los campos son requeridos');
         }
-    }
+    },
+	
+	sincronizarReserva: function(){
+		//Leer la tabla de pendientes
+		//llamar a funcion fn.enviarReserva()
+	}
 };
 $(fn.init);
