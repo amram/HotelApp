@@ -20,19 +20,19 @@ var db = {
         navigator.notification.alert('Reserva en espera de conexión',null,'Guardado','Aceptar');
     },
     leerPendientes: function(){
-        alert(1);
+        //alert(1);
         db.crearDB().transaction(db.selectPendientes,db.error,null);
     },
     selectPendientes: function(tx){
-        alert(2);
+        //alert(2);
         tx.executeSql("SELECT * FROM pendientes",[],db.resultadosPendientes,db.error);
     },
     resultadosPendientes: function(tx,res){
-        alert(3);
+        //alert(3);
         var cant = res.rows.length;
         if(cant>0){
             for(var i = 0;i < cant;i++){
-                alert(i);
+                //alert(i);
                 var th = res.rows.item(i).th;
                 var ha = res.rows.item(i).ha;
                 var pr = res.rows.item(i).pr;
